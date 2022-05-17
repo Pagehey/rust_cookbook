@@ -39,7 +39,7 @@ impl<'a> Router<'a> {
   }
 
   fn ask_for_action(&self) -> Result<u8, Box<dyn Error>> {
-      let mut action = String::new();
+      let mut action = String::with_capacity(1);
       io::stdin()
           .read_line(&mut action)?;
 
